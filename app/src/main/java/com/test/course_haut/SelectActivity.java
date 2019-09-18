@@ -68,4 +68,14 @@ public class SelectActivity extends AppCompatActivity {
         }).start();
         courses.setAdapter(selectAdapter);
     }
+
+    @Override
+    public void finish() {
+        if(Util.list.size()!=0)
+        {
+            Util.list.clear();
+            selectAdapter.notifyDataSetChanged();
+        }
+        super.finish();
+    }
 }
